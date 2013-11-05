@@ -1,0 +1,31 @@
+.add-meal-button {
+  margin: 0 auto;
+  width: 80%;
+}
+.cancel-button {
+  float: left;
+  padding: 0 5%;
+  width: 40%;
+}
+.meal-entry {
+  padding: 0 5px;
+}
+.meal-pic {
+  background-color: black;
+  margin: 0 auto;
+  width: 80%;
+}
+.meal-pic img {
+  padding: 1% 1% 0.25% 1%;
+  height: auto;
+  width: 98%;
+}
+.save-button{
+  float: left;
+  padding: 0 5%;
+  width: 40%;
+}
+.submit-buttons {
+  position: relative;
+  width: 100%;
+}

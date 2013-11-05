@@ -1,0 +1,33 @@
+@import url("style.css");
+
+.body-container {
+	padding: 0 5px;
+}
+.container {
+	background-color: white;
+	margin: 0 auto;
+	max-width: 450px;
+	width: 100%;
+}
+.header {
+	height: 60px;
+}
+.icon {
+	float: left;
+	text-align: left;
+	width: 10%;
+}
+.icon img{
+	float: left;
+	height: auto;
+	width: 50px;
+	padding: 5px;
+}
+.sarah-page {
+	background-color: #E8E8E8;
+}
+.title {
+	float: left;
+	text-align: center;
+	width: 80%;
+}
