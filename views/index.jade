@@ -12,8 +12,8 @@ block content
           a(target="_self", href='#/addEntry', data-icon='add', data-theme="b", class="ui-btn-right add-button", style="margin-top:10px;") Entry
         div(class="body-container")
           div.meal-entry
-            each entry in entries
+            each entry, i in entries
               h2 #{entry.title}
               div.meal-pic
-                a(target="_self",href='/editEntry/#{entry.id}}')
+                a(target="_self",href='/editEntry/#{entry.id}')
                   img(src="#{entry.picture}")
