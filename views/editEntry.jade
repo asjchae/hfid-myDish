@@ -1,0 +1,40 @@
+extends index
+
+block content
+  body
+     div(data-role='page', data-theme='b', class="page sarah-page")
+      div(class="container")
+        div(data-role='header', class = "header")
+          div(data-role='icon', class="icon")
+            img(src='/images/mydish_icon.png')
+          div(data-role='title', class="title")
+            h1 myDish
+          a(target="_self", href='#/addEntry', data-icon='add', data-theme="b", class="ui-btn-right add-button", style="margin-top:10px;") Entry
+        div(class="body-container")
+          div.edit-entry-page
+            br
+            div.title-and-picture
+              div.meal-thumbnail
+                img(src="/images/shawarma.jpeg")
+                button(data-theme='a', data-mini='true') Edit photo
+              div.meal-title
+                h2 Chicken Shawarma
+            div.meal-info-heading
+              div.info-title
+                h3 Categories
+              div.info-edit
+                button(data-theme='a', data-mini='true') Edit
+            div.meal-info-heading
+              div.info-title
+                h3 Categories
+              div.info-edit
+                button(data-theme='a', data-mini='true') Edit
+            div.meal-info-heading
+              div.info-title
+                h3 Categories
+              div.info-edit
+                button(data-theme='a', data-mini='true') Edit
+ 
+//input(ng-model='form.title', name='title')
+//textarea(ng-model='form.text', cols='50', rows='15')
+//button(ng-click='editEntry()') Edit asd
