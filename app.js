@@ -35,6 +35,7 @@ app.get('/users', user.list);
 
 app.get('/addEntry', recipes.addEntry);
 app.get('/editEntry', recipes.editEntry);
+app.get('/deleteEntry', recipes.deleteEntry);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
