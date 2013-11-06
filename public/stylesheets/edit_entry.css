@@ -1,0 +1,43 @@
+.edit-entry-page {
+  height: 700px;
+  position: relative;
+}
+.info-edit {
+  float: right;
+  margin-top: 5px;
+  width: 100px;
+}
+.info-title {
+  float: left;
+  width: 50%;
+}
+.meal-info-heading {
+  border-top: solid #000;
+  border-bottom: solid #000;
+  float: left;
+  height: auto;
+  margin-top: 10px;
+  width: 100%;
+}
+.meal-thumbnail {
+  float: left;
+  height: auto;
+  width: 45%;
+}
+.meal-thumbnail img {
+  height: auto;
+  width: 100%;
+}
+.meal-title {
+  float: right;
+  height: auto;
+  margin-left: 5%;
+  max-width: 50%;
+  width: auto;
+}
+.title-and-picture {
+  float: left;
+  height: auto;
+  position: relative;
+  width: 100%;
+}
