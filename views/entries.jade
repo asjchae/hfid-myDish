@@ -1,9 +1,0 @@
-//- Partial
-
-//- Search Bar Here
-div.meal-entry
-	div(ng-repeat = "entry in entries")
-		h2 {{entry.title}}
-		div.meal-pic
-			a(target="_self",href='/editEntry/{{entry.id}}')
-				img(src="/images/shawarma.jpeg")

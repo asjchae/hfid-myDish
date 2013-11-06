@@ -6,7 +6,7 @@ var entry_schema = mongoose.Schema({
     recipe: String,
     category: Array,
     notes: String,
-    datecreated: Date
+    datecreated: Date,
 });
 
 var Entry = mongoose.model('Entry', entry_schema);
