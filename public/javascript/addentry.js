@@ -2,10 +2,12 @@
 
 $(window).ready(function(){
 	$('#multiselect').multiselect();
-	$('#multiselect').
-	var value = $("#newGroup").val();
-	$('#multiselect').append("<option value=\"" + value + "\">" + value + "</option>");
-	$('#multiselect').multiselect('refresh');
+	$('#other').click(function() {
+		//Add a new category
+		var value = $("#other").val();
+		$('#multiselect').append("<option value=\"" + value + "\">" + value + "</option>");
+		$('#multiselect').multiselect('refresh');
+	});
 
 	$('#newentry').on('submit', function(){
 		var title = $('#title').val();
@@ -13,6 +15,6 @@ $(window).ready(function(){
 		var recipe = $('#recipe').val();
 		var notes = $('#notes').val();
 		var category = $('#multiselect').getChecked();
-	})
+	});
 })
 
