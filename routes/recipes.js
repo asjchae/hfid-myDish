@@ -2,6 +2,19 @@
 var Entry = require('../models/entry_schema')
     , mongoose = require('mongoose');
 
+exports.db_entries = function (req, res) {
+  var allEntries = Entry.find({}).exec(function (err, data) {
+    if (err) {
+      res.send("Could not find all entries");
+    } else if (data.length == 0) {
+      res.send("No entries"));
+    } else {
+      entry_compile(data, res, function (res, entrypack) {
+        res.send(entrypack);
+      });
+    };
+  });
+}
 
 exports.addEntry = function (req, res) {
 	res.render('addEntry');

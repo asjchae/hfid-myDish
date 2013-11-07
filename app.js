@@ -39,6 +39,8 @@ app.get('/addEntry', recipes.addEntry);
 app.get('/editEntry/:id', index.editEntry);
 app.get('/deleteEntry/:id', index.deleteEntry);
 
+app.get('/db_entries', recipes.db_entries);
+
 app.post('/addEntry_post', recipes.addEntry_post);
 
 http.createServer(app).listen(app.get('port'), function(){
