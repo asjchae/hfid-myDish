@@ -18,7 +18,7 @@ block content
             div.add-meal-button
               button(data-theme='a') Retake Photo
             textarea(id="recipe", name='recipe', placeholder='Recipe', style='height:100px')
-            select(name='category-choice', data-theme='a')
+            select(id="multiselect", name='category-choice', data-theme='a', multiple="multiple")
                 option(value='entrees') Entree
                 option(value='app') Appetizers
                 option(value='dessert') Dessert
@@ -35,3 +35,4 @@ block content
             br
             br
   script(src='../public/javascript/addentry.js', type = 'text/javascript')
+  script(src='../public/javascript/jquery.multiselect.min.js', type = 'text/javascript')
