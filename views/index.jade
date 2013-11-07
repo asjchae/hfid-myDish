@@ -11,6 +11,15 @@ block content
             h1 myDish
           a(target="_self", href='#/addEntry', data-icon='add', data-theme="b", class="ui-btn-right add-button", style="margin-top:10px;") Entry
         div(class="body-container")
+          // Chris -->
+          // Look at the 'search filter' part of this page for another way to do this part
+          // http://jquerymobile.com/demos/1.2.0/docs/lists/docs-lists.html
+          div(data-role="collapsible")
+            h4 Categories
+            ul(data-role='listview')
+              li Dinner
+              li Lunch
+              li Breakfast
           div.meal-entry
             each entry, i in entries
               h2 #{entry.title}

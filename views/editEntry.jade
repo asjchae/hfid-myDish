@@ -9,7 +9,7 @@ block content
             img(src='/images/mydish_icon.png')
           div(data-role='title', class="title")
             h1 myDish
-          a(target="_self", href='#/addEntry', data-icon='add', data-theme="b", class="ui-btn-right add-button", style="margin-top:10px;") Entry
+          a(target="_self", href='#/addEntry', data-icon="star", data-theme="b", class="ui-btn-right add-button", style="margin-top:10px;") Share
         div(class="body-container")
           div.edit-entry-page
             br
@@ -24,16 +24,25 @@ block content
                 h3 Categories
               div.info-edit
                 button(data-theme='a', data-mini='true') Edit
+            div.meal-info-content
+              p Chicken, Entree
             div.meal-info-heading
               div.info-title
-                h3 Categories
+                h3 Recipe
               div.info-edit
                 button(data-theme='a', data-mini='true') Edit
+            div.meal-info-content
+              p 6 chicken breasts
+              p lettuce
+              p tomato
+              p taziki sauce
             div.meal-info-heading
               div.info-title
-                h3 Categories
+                h3 Notes
               div.info-edit
                 button(data-theme='a', data-mini='true') Edit
+            div.meal-info-content
+              p This meal was a huge hit with the family! 
  
 //input(ng-model='form.title', name='title')
 //textarea(ng-model='form.text', cols='50', rows='15')
