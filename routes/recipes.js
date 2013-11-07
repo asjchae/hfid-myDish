@@ -7,7 +7,7 @@ exports.db_entries = function (req, res) {
     if (err) {
       res.send("Could not find all entries");
     } else if (data.length == 0) {
-      res.send("No entries"));
+      res.send("No entries");
     } else {
       entry_compile(data, res, function (res, entrypack) {
         res.send(entrypack);
