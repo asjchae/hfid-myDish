@@ -1,4 +1,4 @@
-extends index
+extends layout
 
 block content
   body
@@ -15,10 +15,10 @@ block content
             br
             div.title-and-picture
               div.meal-thumbnail
-                img(src="/images/shawarma.jpeg")
+                img(src="#{entry.picture}")
                 button(data-theme='a', data-mini='true') Edit photo
               div.meal-title
-                h2 Chicken Shawarma
+                h2 #{entry.title}
             div.meal-info-heading
               div.info-title
                 h3 Categories
@@ -35,6 +35,3 @@ block content
               div.info-edit
                 button(data-theme='a', data-mini='true') Edit
  
-//input(ng-model='form.title', name='title')
-//textarea(ng-model='form.text', cols='50', rows='15')
-//button(ng-click='editEntry()') Edit asd
