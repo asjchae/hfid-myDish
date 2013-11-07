@@ -57,10 +57,6 @@ function entry_compile(data, res, callback) {
 };
 
 
-//ADD ENTRY - SAVE ENTRY
-exports.addEntry = function (req, res) {
-  res.render('addEntry');
-};
 
 //EDIT ENTRY: PASS IN SINGLE ENTRY
 exports.editEntry = function (req, res) {

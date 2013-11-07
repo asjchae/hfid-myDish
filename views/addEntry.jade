@@ -11,7 +11,7 @@ block content
             h1 myDish
           a(target="_self", href='#/addEntry', data-icon='add', data-theme="b", class="ui-btn-right add-button", style="margin-top:10px;") Entry
         div(class="body-container")
-          form(action='/addentry', method='post',id='newentry')
+          form(action='/addEntry_post', method='post',id='newentry')
             input(id="title", type='text', name='recipetitle', placeholder='Title')
             div.meal-pic
               img(id="picture", src="/images/shawarma.jpeg")
