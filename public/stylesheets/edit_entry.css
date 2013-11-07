@@ -1,5 +1,8 @@
+.back-button-edit-entry {
+  float: left;
+  width: 100%;
+}
 .edit-entry-page {
-  height: 700px;
   position: relative;
 }
 .info-edit {
