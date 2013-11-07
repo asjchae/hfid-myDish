@@ -12,6 +12,7 @@ var path = require('path')
 var mongoose = require('mongoose');
 
 var app = express();
+mongoose.connect(process.env.MONGOLAB_URI || 'localhost/myDish');
 
 // all environments
 app.set('port', process.env.PORT || 3000);
