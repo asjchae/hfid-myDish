@@ -8,8 +8,9 @@ var routes = require('./routes');
 var user = require('./routes/user');
 var index = require('./routes/index');
 var http = require('http');
-var path = require('path')
+var path = require('path');
 var mongoose = require('mongoose');
+var recipes = require('./routes/recipes');
 
 var app = express();
 mongoose.connect(process.env.MONGOLAB_URI || 'localhost/myDish');

@@ -12,13 +12,13 @@ block content
           a(target="_self", href='#/addEntry', data-icon='add', data-theme="b", class="ui-btn-right add-button", style="margin-top:10px;") Entry
         div(class="body-container")
           form(action='/addEntry_post', method='post',id='newentry')
-            input(id="title", type='text', name='recipetitle', placeholder='Title')
+            input(id="title", type='text', name='title', placeholder='Title')
             div.meal-pic
-              img(id="picture", src="/images/shawarma.jpeg")
+              img(id="picture", name='picture', src="/images/shawarma.jpeg")
             div.add-meal-button
               button(data-theme='a') Retake Photo
             textarea(id="recipe", name='recipe', placeholder='Recipe', style='height:100px')
-            select(id="multiselect", name='category-choice', data-theme='a', multiple="multiple")
+            select(id="multiselect", name='category', data-theme='a', multiple="multiple")
                 option(value='entrees') Entree
                 option(value='app') Appetizers
                 option(value='dessert') Dessert

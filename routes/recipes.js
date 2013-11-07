@@ -1,4 +1,7 @@
 
+var Entry = require('../models/entry_schema')
+    , mongoose = require('mongoose');
+
 
 exports.addEntry = function (req, res) {
 	res.render('addEntry');
@@ -6,6 +9,30 @@ exports.addEntry = function (req, res) {
 
 exports.addEntry_post = function(req, res) {
   console.log(req.body);
+
+  var date = new Date();
+  var month = date.getMonth() + 1;
+  if (month.toString().length == 1) {
+    month = "0".concat(month);  
+  }
+  var number = date.getDate();
+  if (number.toString().length == 1) {
+    number = "0".concat(number);
+  }
+    var year = date.getFullYear();
+
+    var d = year + "/" + month + "/" + number;
+
+    var newentry = new Entry({title: req.body.title, picture: req.body.picture, recipe: req.body.recipe,
+                              category: req.body.category, notes: req.body.notes, date: d});
+    newentry.save(function (err) {
+      if (err) {
+        console.log("Problem saving entry.");
+        res.redirect('/addEntry');
+      } else {
+        res.redirect('/');
+      }
+    });
 };
 
 exports.editEntry = function (req, res) {
