@@ -35,6 +35,8 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/users', user.list);
 
+app.get('/camera', index.camera);
+
 app.get('/addEntry', recipes.addEntry);
 app.get('/editEntry/:id', index.editEntry);
 app.get('/deleteEntry/:id', index.deleteEntry);

@@ -57,6 +57,9 @@ function entry_compile(data, res, callback) {
 };
 
 
+exports.camera = function (req, res) {
+  res.render('camera');
+};
 
 //EDIT ENTRY: PASS IN SINGLE ENTRY
 exports.editEntry = function (req, res) {
