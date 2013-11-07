@@ -1,4 +1,4 @@
-extends index
+extends layout
 
 block content
   body
@@ -11,27 +11,28 @@ block content
             h1 myDish
           a(target="_self", href='#/addEntry', data-icon='add', data-theme="b", class="ui-btn-right add-button", style="margin-top:10px;") Entry
         div(class="body-container")
-          form
-            input(ng-model='form.title', type='text', name='recipetitle', placeholder='Title')
+          form(action='/addentry', method='post',id='newentry')
+            input(id="title", type='text', name='recipetitle', placeholder='Title')
             div.meal-pic
-              img(src="/images/shawarma.jpeg")
+              img(id="picture", src="/images/shawarma.jpeg")
             div.add-meal-button
               button(data-theme='a') Retake Photo
-            textarea(ng-model='form.recipe', name='recipe', placeholder='Recipe', style='height:100px')
+            textarea(id="recipe", name='recipe', placeholder='Recipe', style='height:100px')
             // Chris look at this page: http://jquerymobile.com/demos/1.2.1/docs/forms/selects/custom.html
             select(name='category-choice', data-theme='a')
-                option(value='entrees') Entrees
+                option(value='entrees') Entree
                 option(value='app') Appetizers
                 option(value='dessert') Dessert
                 option(value='bread') Bread
                 option(value='new') Other...
-            textarea(ng-model='form.notes', name='notes', placeholder='Notes', style='height:100px')
+            textarea(id = "notes", name='notes', placeholder='Notes', style='height:100px')
             div.submit-buttons
               div.cancel-button
-                button(data-theme='r') Cancel
+                button(id="cancel",data-theme='r') Cancel
               div.save-button
-                button(data-theme='b', type='submit') Save
+                button(id="save",data-theme='b', type='submit') Save
             br
             br
             br
             br
+  script(src='../public/javascript/addentry.js', type = 'text/javascript')
