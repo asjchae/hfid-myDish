@@ -16,6 +16,19 @@ exports.db_entries = function (req, res) {
   });
 }
 
+function entry_compile(data, res, callback) {
+  var all_entries = [];
+  for (var i=0; i<data.length; i++) {
+    var temp_entry = Entry.findOne({title: data[i].title}).exec(function (err, response) {
+      all_entries.push(response);
+      if (all_entries.length == data.length) {
+        callback(res, all_entries);
+      }
+    });
+  }
+};
+
+
 exports.addEntry = function (req, res) {
 	res.render('addEntry');
 };
