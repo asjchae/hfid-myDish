@@ -28,6 +28,9 @@ function entry_compile(data, res, callback) {
   }
 };
 
+exports.db_delete = function (req, res) {
+  
+}
 
 exports.addEntry = function (req, res) {
 	res.render('addEntry');
