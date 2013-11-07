@@ -5,8 +5,11 @@ block content
      div(data-role='page', data-theme='b', class="page sarah-page")
       div(class="container")
         div(data-role='header', class = "header")
-          div(data-role='icon', class="icon")
-            img(src='/images/mydish_icon.png')
+          div(class="back-and-icon")
+            div(class="back-arrow")
+              img(src='/images/Back_arrow.png')
+            div(data-role='icon', class="icon")
+              img(src='/images/mydish_icon.png')
           div(data-role='title', class="title")
             h1 myDish
           a(target="_self", href='#/addEntry', data-icon="star", data-theme="b", class="ui-btn-right add-button", style="margin-top:10px;") Share

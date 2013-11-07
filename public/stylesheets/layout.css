@@ -1,5 +1,19 @@
 @import url("style.css");
 
+.back-and-icon {
+	float: left;
+	position: relative;
+	width: 25%;
+}
+.back-arrow {
+  float: left;
+  height: auto;
+  margin: 6px 0 0 4px;
+  width: 24px;
+}
+.back-arrow img {
+  width: 100%;
+}
 .body-container {
 	padding: 0 5px;
 	background-color:#000000;
@@ -16,13 +30,13 @@
 .icon {
 	float: left;
 	text-align: left;
-	width: 10%;
+	padding: 5px;
+	width: 50px;
 }
 .icon img{
 	float: left;
 	height: auto;
-	width: 50px;
-	padding: 5px;
+	width: 100%;
 }
 .sarah-page {
 	background-color: #E8E8E8;
@@ -30,5 +44,5 @@
 .title {
 	float: left;
 	text-align: center;
-	width: 80%;
+	width: 50%;
 }
