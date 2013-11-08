@@ -1,9 +1,10 @@
 @import url("style.css");
 
-.back-and-icon {
+.back {
 	float: left;
 	position: relative;
 	width: 25%;
+	cursor:pointer;
 }
 .back-arrow {
   float: left;
