@@ -16,11 +16,11 @@ block content
             h4 Categories
             ul(data-role='listview')
               li Dinner
-              li Lunch
+              li Lunch 
               li Breakfast
           div.meal-entry
             each entry, i in entries
               h2 #{entry.title}
               div.meal-pic
-                a(target="_self",href='/editEntry/#{entry.id}')
+                a(target="_self", href='/editEntry/#{entry.title}')
                   img(src="#{entry.picture}")
