@@ -38,7 +38,7 @@ app.get('/users', user.list);
 app.get('/camera', index.camera);
 
 app.get('/addEntry', recipes.addEntry);
-app.get('/editEntry/:id', index.editEntry);
+app.get('/editEntry/:id', recipes.editEntry);
 app.get('/deleteEntry/:id', index.deleteEntry);
 
 app.get('/db_entries', recipes.db_entries);

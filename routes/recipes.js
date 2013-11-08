@@ -29,7 +29,7 @@ function entry_compile(data, res, callback) {
 };
 
 exports.db_delete = function (req, res) {
-  
+
 }
 
 exports.addEntry = function (req, res) {
@@ -65,8 +65,15 @@ exports.addEntry_post = function(req, res) {
 };
 
 exports.editEntry = function (req, res) {
-  var id = req.params.id;
-	res.render('editEntry',{entry: data.entries[id]});
+  var entry_title = req.params.id;
+  Entry.findOne({title: entry_title}).exec(function (err, response) {
+    if (err) {
+      console.log('Could not locate entry.')
+    } else {
+      res.render('editEntry', {entry: response});
+    }
+  });
+	// res.render('editEntry',{entry: data.entries[id]});
 };
 
 
