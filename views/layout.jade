@@ -10,11 +10,6 @@ html(ng-app="myApp", lang = "en")
     link(rel='stylesheet', href='/stylesheets/camera.css')
     link(rel='stylesheet', href='/stylesheets/mobile_red_buttons.css')
     script(src='http://code.jquery.com/jquery-1.8.2.min.js', type = 'text/javascript')
-    script(type='text/javascript')
-        $(document).bind('mobileinit',function(){
-          $.mobile.selectmenu.prototype.options.nativeMenu = false;
-          });
-    script(src='/javascript/layout.js', type = 'text/javascript')
     script(src='http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js', type = 'text/javascript')
 
   block content     
