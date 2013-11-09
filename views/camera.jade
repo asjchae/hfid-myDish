@@ -1,1 +1,21 @@
-  
+extends layout
+
+block content
+  body
+    div(data-role='page', data-theme='b', class="page sarah-page")
+      div(class="container")
+        div(data-role='header', class = "header")
+          div(class="back-and-icon")
+            div(class="back-arrow")
+              img(src='/images/Back_arrow.png')
+            div(data-role='icon', class="icon")
+              img(src='/images/mydish_icon.png')
+          div(data-role='title', class="title")
+            h1 myDish
+        div(class="body-container camera-background")
+          div.camera
+            img(src='/images/pizza_wheels.jpg')
+        div.bottom-bar(data-role='footer')
+          div.camera-button
+            button(id='take-picture', data-theme='a') Take Picture
+          
