@@ -1,3 +1,7 @@
+var Entry = require('../models/entry_schema')
+    , mongoose = require('mongoose');
+
+
 //Resize the height of the page
 
 function resizePage(){
@@ -13,7 +17,7 @@ function setClickableBack(){
 }
 
 function searchFunction(){
-	
+
 }
 
 $(window).ready(function(){

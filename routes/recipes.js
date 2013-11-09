@@ -29,8 +29,9 @@ function entry_compile(data, res, callback) {
 };
 
 exports.db_delete = function (req, res) {
-
-}
+  var deleteAll = Entry.find({}).remove();
+  res.redirect('/db_entries');
+};
 
 exports.addEntry = function (req, res) {
 	res.render('addEntry');
@@ -59,6 +60,7 @@ exports.addEntry_post = function(req, res) {
         console.log("Problem saving entry.");
         res.redirect('/addEntry');
       } else {
+        console.log(window.location);
         res.redirect('/');
       }
     });

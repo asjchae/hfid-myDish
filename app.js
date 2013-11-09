@@ -3,6 +3,8 @@
  * Module dependencies.
  */
 
+// Note for Ari if mongodb fails: sudo mongod --dbpath /var/lib/mongodb --smallfiles
+
 var express = require('express');
 var routes = require('./routes');
 var user = require('./routes/user');
@@ -42,6 +44,7 @@ app.get('/editEntry/:id', recipes.editEntry);
 app.get('/deleteEntry/:id', index.deleteEntry);
 
 app.get('/db_entries', recipes.db_entries);
+app.get('/db_delete', recipes.db_delete);
 
 app.post('/addEntry_post', recipes.addEntry_post);
 
