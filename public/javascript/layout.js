@@ -8,12 +8,12 @@ function resizePage(){
 
 function setClickableBack(){
 	$('.back').click(function() {
-		parent.history.back();
+		$('window').history.back();
 	});
 }
 
 function searchFunction(){
-	
+	$(
 }
 
 $(window).ready(function(){
