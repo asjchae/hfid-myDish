@@ -1,4 +1,3 @@
-
 var Entry = require('../models/entry_schema')
     , mongoose = require('mongoose');
 
