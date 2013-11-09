@@ -4,14 +4,19 @@
 	float: left;
 	position: relative;
 	width: 25%;
+	text-decoration: none;
+	background:transparent;
+	border: 0px;
 	cursor:pointer;
 }
+
 .back-arrow {
   float: left;
   height: auto;
   margin: 6px 0 0 4px;
   width: 24px;
 }
+
 .back-arrow img {
   width: 100%;
 }
@@ -43,7 +48,6 @@
 	background-color: #E8E8E8;
 }
 .title {
-	float: left;
 	text-align: center;
-	width: 50%;
+	width: 100%;
 }

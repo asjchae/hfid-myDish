@@ -21,6 +21,6 @@ function searchFunction(){
 
 $(window).ready(function(){
 	resizePage();
-	setClickableBack();
+	//setClickableBack();
 	searchFunction();
 });
