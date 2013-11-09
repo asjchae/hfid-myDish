@@ -55,8 +55,11 @@ block content
               div.info-title
                 h3 Notes
               div.info-edit
-                button(data-theme='a', data-mini='true') Edit
-            div.meal-info-content
+                a(href='#popupEditNotes', data-rel='popup', data-role='button', data-theme="a", data-mini='true', data-position-to="#notes-content", data-transition="pop") Edit
+                  #popupEditNotes(data-role='popup', data-overlay-theme="a")
+                    div.edit-text-popup-container
+                      textarea(id = "edit-notes", name='edit-notes', style='height:100px')
+            #notes-content.meal-info-content
               p This meal was a huge hit with the family! 
             div.back-button-edit-entry
               button(id='back-from-edit-entry', data-theme='b', data-icon="back", data-rel="back") Back
