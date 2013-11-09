@@ -17,7 +17,9 @@ function setClickableBack(){
 }
 
 function searchFunction(){
-	
+	$('.').onSelect(function() {
+
+	});
 }
 
 $(window).ready(function(){
