@@ -7,7 +7,6 @@ function resizePage(){
 }
 
 function setClickableBack(){
-	$('back').css({})
 	$('.back').click(function() {
 		parent.history.back();
 	});
