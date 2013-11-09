@@ -18,6 +18,7 @@ exports.db_entries = function (req, res) {
 
 
 exports.db_delete = function (req, res) {
+  Entry.remove({});
   var deleteAll = Entry.find({}).exec(function (err, data) {
     if (err) {
       res.send("Could not find all entries");
@@ -26,11 +27,12 @@ exports.db_delete = function (req, res) {
     } else {
       entry_compile(data, res, function (res, allentries) {
         for (var i=0; i<allentries.length; i++) {
-          var entry = Entry.find({title: allentries[i].title}).remove();
+          var entry = Entry.find({title: allentries[i].title}).remove().exec();
         }
       });
     }
   });
+  res.redirect("/db_entries");
 };
 
 function entry_compile(data, res, callback) {
