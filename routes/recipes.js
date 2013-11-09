@@ -16,6 +16,23 @@ exports.db_entries = function (req, res) {
   });
 };
 
+
+exports.db_delete = function (req, res) {
+  var deleteAll = Entry.find({}).exec(function (err, data) {
+    if (err) {
+      res.send("Could not find all entries");
+    } else if (data.length == 0) {
+      res.send("No entries");
+    } else {
+      entry_compile(data, res, function (res, allentries) {
+        for (var i=0; i<allentries.length; i++) {
+          var entry = Entry.find({title: allentries[i].title}).remove();
+        }
+      });
+    }
+  });
+};
+
 function entry_compile(data, res, callback) {
   var all_entries = [];
   for (var i=0; i<data.length; i++) {
@@ -28,10 +45,6 @@ function entry_compile(data, res, callback) {
   }
 };
 
-exports.db_delete = function (req, res) {
-  var deleteAll = Entry.find({}).remove();
-  res.redirect('/db_entries');
-};
 
 exports.addEntry = function (req, res) {
 	res.render('addEntry');
