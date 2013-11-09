@@ -6,6 +6,10 @@
 .edit-entry-page {
   position: relative;
 }
+.edit-text-popup-container {
+  margin: 0 5px;
+  width: 410px;
+}
 .info-edit {
   float: right;
   margin-top: 5px;
