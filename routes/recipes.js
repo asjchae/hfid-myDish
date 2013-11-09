@@ -60,7 +60,6 @@ exports.addEntry_post = function(req, res) {
         console.log("Problem saving entry.");
         res.redirect('/addEntry');
       } else {
-        console.log(window.location);
         res.redirect('/');
       }
     });
