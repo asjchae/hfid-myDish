@@ -48,6 +48,7 @@
 	background-color: #E8E8E8;
 }
 .title {
+	position:absolute;
 	text-align: center;
 	width: 100%;
 }
