@@ -61,12 +61,6 @@ exports.camera = function (req, res) {
   res.render('camera');
 };
 
-//EDIT ENTRY: PASS IN SINGLE ENTRY
-exports.editEntry = function (req, res) {
-  var id = req.params.id;
-  res.render('editEntry',{entry: data.entries[id]});
-};
-
 
 // DELETE ENTRY: PASS IN ID
 exports.deleteEntry = function (req, res) {
