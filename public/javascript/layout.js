@@ -12,7 +12,12 @@ function setClickableBack(){
 	});
 }
 
+function searchFunction(){
+	
+}
+
 $(window).ready(function(){
 	resizePage();
 	setClickableBack();
+	searchFunction();
 });
