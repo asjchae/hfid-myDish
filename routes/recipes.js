@@ -14,7 +14,7 @@ exports.db_entries = function (req, res) {
       });
     };
   });
-}
+};
 
 function entry_compile(data, res, callback) {
   var all_entries = [];
