@@ -1,0 +1,16 @@
+.camera {
+  height: auto;
+  text-align: center;
+  width: 100%;
+}
+.camera img {
+  height: auto;
+  width: 100%;
+}
+.camera-background {
+  background-color: #000;
+}
+.camera-button {
+  margin: 0 25%;
+  width: 50%;
+}
