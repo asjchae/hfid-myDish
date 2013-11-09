@@ -45,8 +45,11 @@ block content
               div.info-title
                 h3 Recipe
               div.info-edit
-                button(data-theme='a', data-mini='true') Edit
-            div.meal-info-content
+                a(href='#popupEditRecipe', data-rel='popup', data-role='button', data-theme="a", data-mini='true', data-position-to="#recipe-content", data-transition="pop") Edit
+                  #popupEditRecipe(data-role='popup', data-overlay-theme="a")
+                    div.edit-text-popup-container
+                      textarea(id = "edit-recipe", name='edit-recipe', style='height:100px')
+            #recipe-content.meal-info-content
               p 6 chicken breasts
               p lettuce
               p tomato
