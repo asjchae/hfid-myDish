@@ -12,14 +12,26 @@ block content
               img(src='/images/mydish_icon.png')
           div(data-role='title', class="title")
             h1 myDish
-          a(target="_self", href='#/addEntry', data-icon="star", data-theme="b", class="ui-btn-right add-button", style="margin-top:10px;") Share
+          //a(target="_self", href='#/addEntry', data-icon="star", data-theme="b", class="ui-btn-right add-button", style="margin-top:10px;") Share
+          a(href='#popupShare', data-rel='popup', data-role='button', data-theme="b", class="ui-btn-right add-button", data-icon="star", data-position-to="window", data-transition="pop", style="margin-top:10px;") Share
+              #popupShare(data-role='popup', data-overlay-theme="a", class="ui-content")
+                h3 Share this dish:
+                div.social-icons-container
+                  div.social-icon
+                    img(src='/images/social_icons/email.png')
+                  div.social-icon
+                    img(src='/images/social_icons/facebook.png')
+                  div.social-icon-instagram
+                    img(src='/images/social_icons/instagram.png')
+                  div.social-icon
+                    img(src='/images/social_icons/twitter.png')
         div(class="body-container")
           div.edit-entry-page
             br
             div.title-and-picture
               div.meal-thumbnail
                 img(src="#{entry.picture}")
-                button(data-theme='a', data-mini='true') Edit photo
+                button(data-theme='a', data-mini='true') Retake photo
               div.meal-title
                 h2 #{entry.title}
             div.meal-info-heading

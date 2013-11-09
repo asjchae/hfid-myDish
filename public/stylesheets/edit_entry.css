@@ -49,6 +49,31 @@
   max-width: 50%;
   width: auto;
 }
+.social-icon {
+  float: left;
+  height: auto;
+  margin: 5px;
+  width: 90px;
+}
+.social-icon img {
+  height: auto;
+  width: 100%;
+}
+.social-icon-instagram {
+  float: left;
+  height: auto;
+  margin: 8px 5px 5px;
+  width: 87px;
+}
+.social-icon-instagram img {
+  height: auto;
+  width: 100%;
+}
+.social-icons-container {
+  height: 100px;
+  position: relative;
+  width: auto;
+}
 .title-and-picture {
   float: left;
   height: auto;
