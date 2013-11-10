@@ -46,7 +46,7 @@ block content
                   option(value='bread') Bread
                   option(id="other", value='new') Other...
             #category-content.meal-info-content
-              p(id="catdisplay") Chicken, Entree
+              p(id="catdisplay") #{entry.category}
             div.meal-info-heading
               div.info-title
                 h3 Recipe
@@ -59,10 +59,7 @@ block content
                         div.save-button-new-info
                           button(data-role='button', data-theme="b", data-mini='true') Save
             #recipe-content.meal-info-content
-              p 6 chicken breasts
-              p lettuce
-              p tomato
-              p taziki sauce
+              p #{entry.recipe}
             div.meal-info-heading
               div.info-title
                 h3 Notes
@@ -75,7 +72,7 @@ block content
                         div.save-button-new-info
                           button(data-role='button', data-theme="b", data-mini='true') Save
             #notes-content.meal-info-content
-              p This meal was a huge hit with the family! 
+              p #{entry.notes}
             div.back-button-edit-entry
               button(id='back-from-edit-entry', data-theme='b', data-icon="back", data-rel="back") Back 
   script(src='/javascript/layout.js', type = 'text/javascript')
