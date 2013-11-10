@@ -1,10 +1,12 @@
 $(document).ready(function(){
 	resizePage();
+	$('body').css('background-color','#d9d9d9');
 });
 
 function resizePage(){
-	if ($('.body-container').height() < 600){
-		$('.body-container').height(600);
+	if ($('.page sarah-page"').height() < 600){
+		$('.page sarah-page"').height(600);
+		$('body').height(600);
 	}
 }
 
