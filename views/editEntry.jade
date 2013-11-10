@@ -39,14 +39,14 @@ block content
                 h3 Categories
               div.info-edit
                 //button(data-theme='a', data-mini='true') Edit
-                select(id="multiselect", name='category', data-theme='a', multiple="multiple", data-mini='true')
+                select(id="multiselect", name='category', data-theme='a', multiple="multiple", data-mini='true', onchange="editEntryCats();")
                   option(value='entrees') Entree
                   option(value='app') Appetizers
                   option(value='dessert') Dessert
                   option(value='bread') Bread
                   option(id="other", value='new') Other...
             #category-content.meal-info-content
-              p Chicken, Entree
+              p(id="catdisplay") Chicken, Entree
             div.meal-info-heading
               div.info-title
                 h3 Recipe

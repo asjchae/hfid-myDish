@@ -8,6 +8,11 @@ function resizePage(){
 	}
 }
 
+function editEntryCats(){
+	var categories = $("option:selected").map(function(){ return this.value }).get().join(", ");
+	$("#catsdisplay").text(categories);
+}
+
 // function changeFunc(entries){
 // 	var categories = $("option:selected").map(function(){ return this.value }).get().join(", ");
 // 	$.post('/filter_entries'), {category: categories}, function(data) {
