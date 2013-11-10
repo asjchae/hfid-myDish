@@ -7,6 +7,7 @@
   position: relative;
 }
 .edit-text-popup-container {
+  height: 150px;
   margin: 0 5px;
   width: 410px;
 }
@@ -52,6 +53,14 @@
   margin-left: 5%;
   max-width: 50%;
   width: auto;
+}
+.save-edited-entry {
+  position: relative;
+  width: 100%;
+}
+.save-button-new-info {
+  float: right;
+  width: 100px;
 }
 .social-icon {
   float: left;
