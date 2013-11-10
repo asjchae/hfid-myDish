@@ -61,9 +61,9 @@ exports.addEntry_post = function(req, res) {
     newentry.save(function (err) {
       if (err) {
         console.log("Problem saving entry.");
-        res.redirect('/addEntry');
+        return res.redirect('/addEntry');
       } else {
-        res.redirect('/');
+        return res.redirect('/');
       }
     });
 };

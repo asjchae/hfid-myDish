@@ -46,7 +46,7 @@ app.get('/deleteEntry/:id', index.deleteEntry);
 app.get('/db_entries', recipes.db_entries);
 app.get('/db_delete', recipes.db_delete);
 
-app.post('/addEntry_post', recipes.addEntry_post);
+app.post('/', recipes.addEntry_post);
 app.post('/selectedcategories', index.catselects);
 
 http.createServer(app).listen(app.get('port'), function(){
