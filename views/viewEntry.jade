@@ -16,7 +16,7 @@ block content
           form(action='/viewEntry/#{entry.title}', method='post', id='newentry')
             textarea(id="title", type='text', name='title') #{entry.title}
             div.meal-pic
-              img(id="picture", name='picture', src="/images/shawarma.jpeg")
+              img(id="picture", name='picture', src="#{entry.picture}")
             div.add-meal-button
               button(data-theme='a') Retake Photo
             textarea(id="recipe", name='recipe', style='height:100px') #{entry.recipe}
