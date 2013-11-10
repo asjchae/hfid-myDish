@@ -29,7 +29,8 @@ block content
             textarea(id = "notes", name='notes', placeholder='Notes', style='height:100px')
             div.submit-buttons
               div.cancel-button
-                button(id="cancel", data-theme='r', data-rel = "back") Cancel
+                a(data-rel="back")
+                  button(id="cancel") Cancel
               div.save-button
                 button(id="save",data-theme='b', type='submit') Save
 

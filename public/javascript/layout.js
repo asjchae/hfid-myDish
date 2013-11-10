@@ -3,8 +3,8 @@ $(document).ready(function(){
 });
 
 function resizePage(){
-	if ($('.body-container').outerHeight() < 600){
-		$('.body-container').outerHeight(600);
+	if ($('.body-container').height() < 600){
+		$('.body-container').height(600);
 	}
 }
 
