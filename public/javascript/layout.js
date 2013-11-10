@@ -1,4 +1,4 @@
-$(window).ready(function(){
+$(document).ready(function(){
 	resizePage();
 });
 
@@ -6,11 +6,6 @@ function resizePage(){
 	if ($('.body-container').outerHeight() < 600){
 		$('.body-container').outerHeight(600);
 	}
-}
-
-function editEntryCats(){
-	var categories = $("option:selected").map(function(){ return this.value }).get().join(", ");
-	$("#catsdisplay").text(categories);
 }
 
 // function changeFunc(entries){

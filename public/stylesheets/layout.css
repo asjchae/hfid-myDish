@@ -8,6 +8,7 @@
 	background:transparent;
 	border: 0px;
 	cursor:pointer;
+	z-index:1000;
 }
 
 .back-arrow {

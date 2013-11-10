@@ -30,7 +30,8 @@ block content
             br
             div.title-and-picture
               div.meal-thumbnail
-                img(src="#{entry.picture}")
+                //- img(src="#{entry.picture}")
+                img(src="/images/mydish_icon.png")
                 button(data-theme='a', data-mini='true') Retake photo
               div.meal-title
                 h2 #{entry.title}
@@ -40,13 +41,13 @@ block content
               div.info-edit
                 //button(data-theme='a', data-mini='true') Edit
                 select(id="multiselect", name='category', data-theme='a', multiple="multiple", data-mini='true', onchange="editEntryCats();")
-                  option(value='entrees') Entree
-                  option(value='app') Appetizers
-                  option(value='dessert') Dessert
-                  option(value='bread') Bread
+                  option(value='Entrees') Entree
+                  option(value='Appetizers') Appetizers
+                  option(value='Dessert') Dessert
+                  option(value='Bread') Bread
                   option(id="other", value='new') Other...
             #category-content.meal-info-content
-              p(id="catdisplay") Chicken, Entree
+              p(id="catdisplay") #{entry.category}
             div.meal-info-heading
               div.info-title
                 h3 Recipe
@@ -59,10 +60,7 @@ block content
                         div.save-button-new-info
                           button(data-role='button', data-theme="b", data-mini='true') Save
             #recipe-content.meal-info-content
-              p 6 chicken breasts
-              p lettuce
-              p tomato
-              p taziki sauce
+              p #{entry.recipe}
             div.meal-info-heading
               div.info-title
                 h3 Notes
@@ -75,7 +73,10 @@ block content
                         div.save-button-new-info
                           button(data-role='button', data-theme="b", data-mini='true') Save
             #notes-content.meal-info-content
-              p This meal was a huge hit with the family! 
+              p #{entry.notes} 
             div.back-button-edit-entry
-              button(id='back-from-edit-entry', data-theme='b', data-icon="back", data-rel="back") Back 
+              a(data-rel="back")
+                button(id='back-from-edit-entry', data-theme='b', data-icon="back") Back 
+  
   script(src='/javascript/layout.js', type = 'text/javascript')
+  script(src='/javascript/editentry.js', type = 'text/javascript')
