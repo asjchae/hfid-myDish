@@ -1,6 +1,5 @@
 $(window).ready(function(){
 	resizePage();
-	setSelected();
 });
 
 var Entry = require('../models/entry_schema')
@@ -12,7 +11,7 @@ function resizePage(){
 	}
 }
 
-function setSelected(){
+function changeFunc(){
 	$('#multiselect').onchange(function(){
 			var selected = $('#multiselect').options[$('#multiselect').selectedIndex].value;
 	});
