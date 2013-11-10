@@ -20,7 +20,7 @@ var Entry = require('../models/entry_schema')
 //       "title": "Chicken Noms2",
 //       "picture":"/images/shawarma.jpeg",
 //       "notes": "fake notes2",
-//       "recipe": "fake recipe2",
+//       "recipe": "fake recipe2",  
 //       "category": "cat1#cat2#cat32",
 //       "datecreated": "11/4/20132",
 //       "id":"2"
@@ -46,7 +46,7 @@ exports.index = function(req, res){
       });
     };
   });
-};
+};  
 
 function entry_compile(data, res, callback) {
   var all_entries = [];

@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  body
+  body(class="myBody")
     div(data-role='page', data-theme='b', class="page sarah-page")
       div(class="container")
         div(data-role='header', class = "header")
@@ -26,3 +26,6 @@ block content
                   img(src="#{entry.picture}")
 
   script(src='/javascript/layout.js', type = 'text/javascript')
+
+
+    
