@@ -39,15 +39,12 @@ block content
                 h3 Categories
               div.info-edit
                 //button(data-theme='a', data-mini='true') Edit
-                a(href='#popupEditCategories', data-rel='popup', data-role='button', data-theme="a", data-mini='true', data-position-to="#category-content", data-transition="pop") Edit
-                  #popupEditCategories(data-role='popup', data-overlay-theme="a")
-                    div.edit-text-popup-container
-                      select(id="multiselect", name='category', data-theme='a', multiple="multiple")
-                        option(value='entrees') Entree
-                        option(value='app') Appetizers
-                        option(value='dessert') Dessert
-                        option(value='bread') Bread
-                        option(id="other", value='new') Other...
+                select(id="multiselect", name='category', data-theme='a', multiple="multiple", data-mini='true')
+                  option(value='entrees') Entree
+                  option(value='app') Appetizers
+                  option(value='dessert') Dessert
+                  option(value='bread') Bread
+                  option(id="other", value='new') Other...
             #category-content.meal-info-content
               p Chicken, Entree
             div.meal-info-heading
