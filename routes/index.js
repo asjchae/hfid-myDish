@@ -37,6 +37,7 @@ exports.index = function(req, res){
       res.render('index', {entries: []});
     } else {
       entry_compile(data, res, function (res, entrypack) {
+        entrypack.reverse();
         res.render('index', {entries: entrypack});
       });
     };
