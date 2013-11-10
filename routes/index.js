@@ -59,7 +59,7 @@ function entry_compile(data, res, callback) {
 exports.catselects = function (req, res) {
   console.log("what");
   res.redirect('/');
-}
+};
 
 exports.camera = function (req, res) {
   res.render('camera');
