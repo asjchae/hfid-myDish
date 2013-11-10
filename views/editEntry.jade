@@ -55,6 +55,9 @@ block content
                   #popupEditRecipe(data-role='popup', data-overlay-theme="a")
                     div.edit-text-popup-container
                       textarea(id = "edit-recipe", name='edit-recipe', style='height:100px')
+                      div.save-edited-entry
+                        div.save-button-new-info
+                          button(data-role='button', data-theme="b", data-mini='true') Save
             #recipe-content.meal-info-content
               p 6 chicken breasts
               p lettuce
@@ -68,6 +71,9 @@ block content
                   #popupEditNotes(data-role='popup', data-overlay-theme="a")
                     div.edit-text-popup-container
                       textarea(id = "edit-notes", name='edit-notes', style='height:100px')
+                      div.save-edited-entry
+                        div.save-button-new-info
+                          button(data-role='button', data-theme="b", data-mini='true') Save
             #notes-content.meal-info-content
               p This meal was a huge hit with the family! 
             div.back-button-edit-entry
