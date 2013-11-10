@@ -47,6 +47,7 @@ app.get('/db_entries', recipes.db_entries);
 app.get('/db_delete', recipes.db_delete);
 
 app.post('/addEntry_post', recipes.addEntry_post);
+app.post('/selectedcategories', index.catselect);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
