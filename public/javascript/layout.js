@@ -1,8 +1,9 @@
+$(window).ready(function(){
+	resizePage();
+});
+
 var Entry = require('../models/entry_schema')
     , mongoose = require('mongoose');
-
-
-//Resize the height of the page
 
 function resizePage(){
 	if ($('.body-container').height() < 600){
@@ -10,20 +11,10 @@ function resizePage(){
 	}
 }
 
-function setClickableBack(){
-	$('.back').click(function() {
-		$('window').history.back();
+function changeFunc(){
+	$('#multiselect').onchange(function(){
+			var selected = $('#multiselect').options[$('#multiselect').selectedIndex].value;
 	});
 }
 
-function searchFunction(){
-	$('.').onSelect(function() {
 
-	});
-}
-
-$(window).ready(function(){
-	resizePage();
-	//setClickableBack();
-	searchFunction();
-});

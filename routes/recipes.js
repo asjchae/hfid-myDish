@@ -16,6 +16,13 @@ exports.db_entries = function (req, res) {
   });
 };
 
+
+exports.db_delete = function (req, res) {
+  var deleteAll = Entry.find({}).remove();
+  deleteAll.exec();
+  res.redirect('/db_entries');
+};
+
 function entry_compile(data, res, callback) {
   var all_entries = [];
   for (var i=0; i<data.length; i++) {
@@ -28,10 +35,6 @@ function entry_compile(data, res, callback) {
   }
 };
 
-exports.db_delete = function (req, res) {
-  var deleteAll = Entry.find({}).remove();
-  res.redirect('/db_entries');
-};
 
 exports.addEntry = function (req, res) {
 	res.render('addEntry');
