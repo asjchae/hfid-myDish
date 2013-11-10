@@ -14,8 +14,6 @@ function resizePage(){
 
 function setSelected(){
 	$('#multiselect').onchange(function(){
-			var selected = $('#multiselect').options[$('#multiselect').selectedIndex].value;
+			var selected = $('#multiselect').options[$('#multiselect').selectedIndex.value;
 	});
 }
-
-
