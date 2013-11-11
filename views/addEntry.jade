@@ -18,7 +18,7 @@ block content
             div.meal-pic
               img(id="picture", name='picture', src="/images/shawarma.jpeg")
             div.add-meal-button
-              button(data-theme='a') Retake Photo
+              a(type="button", href='#/camera', data-theme='a') Retake Photo
             textarea(id="recipe", name='recipe', placeholder='Recipe', style='height:100px')
             select(id="multiselect", name='category', data-theme='a', multiple="multiple")
                 option(value='Entree') Entree
@@ -35,3 +35,5 @@ block content
                 button(id="save",data-theme='b', type='submit') Save
 
   script(src='/javascript/addentry.js', type = 'text/javascript')
+
+    
