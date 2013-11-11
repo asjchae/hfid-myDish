@@ -46,7 +46,6 @@ exports.addEntry = function (req, res) {
 exports.addEntry_post = function(req, res) {
 
   var date = new Date();
-<<<<<<< HEAD
   var month = date.getMonth() + 1;
   if (month.toString().length == 1) {
     month = "0".concat(month);  
@@ -59,7 +58,7 @@ exports.addEntry_post = function(req, res) {
 
     var d = year + "/" + month + "/" + number;
 
-    var newentry = new Entry({title: req.body.title, picture:req.body.picture, recipe: req.body.recipe,
+    var newentry = new Entry({title: req.body.title, picture:pictures.urls[Math.floor(Math.random()*pictures.urls.length)], recipe: req.body.recipe,
                               category: req.body.category, notes: req.body.notes, date: d});
     newentry.save(function (err) {  
       if (err) {
@@ -73,26 +72,34 @@ exports.addEntry_post = function(req, res) {
 
 exports.viewEntry = function (req, res) {
   var entry_title = req.params.id;
-  Entry.findOne({title: entry_title}).exec(function (err, response) {
+  console.log("DEBUG1"); 
+  console.log(req.params.id);
+  Entry.findOne({title:entry_title}).exec(function (err, response) {
     if (err) {
       console.log('Could not locate entry.');
     } else {
+      console.log("HIERHEREIHEIRHEIH")
+      console.log(response);
       res.render('viewEntry', {entry: response});
     }
   });
 	// res.render('editEntry',{entry: data.entries[id]});
 };
 
-exports.editEntrypost = function (req, res) {
-
+exports.editEntrypost = function (req, res) {//picture is not in req
   var entry_title = req.params.id;
+  console.log(req.body);
   Entry.findOne({title: entry_title}).exec(function (err, response) {
     var date = response.date;
     Entry.findOneAndRemove({title: entry_title}).exec(function (err, responsivo) {
       var newentry = new Entry({title: req.body.title, picture: req.body.picture, recipe: req.body.recipe,
                               category: req.body.category, notes: req.body.notes, date: date});
+      console.log(newentry);
       newentry.save(function (err) {
-        return res.redirect('/')
+        if (err)
+        return res.redirect('/viewEntry', {entry: response});
+        else
+          return res.redirect('/')
       });
     });
   });

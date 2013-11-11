@@ -13,10 +13,11 @@ block content
           div(data-role='title', class="title")
             h1 myDish
         div(class="body-container")
+          p #{entry.title}
           form(action='/viewEntry/#{entry.title}', method='post', id='newentry')
             textarea(id="title", type='text', name='title') #{entry.title}
             div.meal-pic
-              img(id="picture", name='picture', src="#{entry.picture}")
+              img(id="picture", name='picture', src="#{entry.picture}") #{entry.picture}
             div.add-meal-button
               a(type="button", href='#/camera', data-theme='a') Retake Photo
             textarea(id="recipe", name='recipe', style='height:100px') #{entry.recipe}
