@@ -18,7 +18,7 @@ block content
             div.meal-pic
               img(id="picture", name='picture', src="#{entry.picture}")
             div.add-meal-button
-              button(data-theme='a') Retake Photo
+              a(type="button", href='#/camera', data-theme='a') Retake Photo
             textarea(id="recipe", name='recipe', style='height:100px') #{entry.recipe}
             select(id="multiselect", name='category', data-theme='a', multiple="multiple")
                 option(value='entrees') Entree

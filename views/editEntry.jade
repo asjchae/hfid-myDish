@@ -32,7 +32,7 @@ block content
               div.meal-thumbnail
                 //- img(src="#{entry.picture}")
                 img(src="/images/mydish_icon.png")
-                button(data-theme='a', data-mini='true') Retake photo
+                  a(type="button", target="_self", href='#/camera', data-theme='a') Retake Photo
               div.meal-title
                 h2 #{entry.title}
             div.meal-info-heading
