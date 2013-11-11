@@ -81,6 +81,7 @@ exports.viewEntry = function (req, res) {
 
 exports.editEntrypost = function (req, res) {//picture is not in req
   var entry_title = req.params.id;
+  console.log("editEntryPost");
   console.log(req.body);
   Entry.findOne({title: entry_title}).exec(function (err, response) {
     var date = response.date;
