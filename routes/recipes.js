@@ -44,31 +44,22 @@ exports.addEntry = function (req, res) {
 };
 
 exports.addEntry_post = function(req, res) {
-  console.log(req.body);
 
   var date = new Date();
-  var month = date.getMonth() + 1;
-  if (month.toString().length == 1) {
-    month = "0".concat(month);  
-  }
-  var number = date.getDate();
-  if (number.toString().length == 1) {
-    number = "0".concat(number);
-  }
-    var year = date.getFullYear();
 
-    var d = year + "/" + month + "/" + number;
+  var newentry = new Entry({title: req.body.title, picture: pictures.urls[Math.floor(Math.random()*pictures.urls.length)], recipe: req.body.recipe,
+                              category: req.body.category, notes: req.body.notes, datecreated: date});
 
-    var newentry = new Entry({title: req.body.title, picture: pictures.urls[Math.floor(Math.random()*pictures.urls.length)], recipe: req.body.recipe,
-                              category: req.body.category, notes: req.body.notes, date: d});
-    newentry.save(function (err) {  
-      if (err) {
-        console.log("Problem saving entry.");
-        return res.redirect('/addEntry');
-      } else {
-        return res.redirect('/');
-      }
-    });
+  console.log(newentry);
+
+  newentry.save(function (err) {  
+    if (err) {
+      console.log("Problem saving entry.");
+      return res.redirect('/addEntry');
+    } else {
+      return res.redirect('/');
+    }
+  });
 };
 
 exports.viewEntry = function (req, res) {
@@ -85,27 +76,17 @@ exports.viewEntry = function (req, res) {
 
 exports.editEntrypost = function (req, res) {
 
-//     var newentry = new Entry({title: req.body.title, picture: req.body.picture, recipe: req.body.recipe,
-//                               category: req.body.category, notes: req.body.notes, date: req.body.date});
-//     newentry.save(function (err) {
-//       if (err) {
-//         console.log("Problem saving entry.");
-//         return res.redirect('/addEntry');
-//       } else {
-//         return res.redirect('/');
-//       }
-//     });
-
-//     Entry.findOneAndRemove({title:req.params.id})
-// // Wait hang on
-//   var entry_edits = Entry.findOne({title: req.params.id}).exec(function (err, response) {
-//     if (err) {
-//       console.log("Can't edit");
-//     } else {
-//       entry_edits.update({title: req.body.title}, {recipe: req.body.recipe}, {notes: req.body.notes}, {picture: req.body.picture}, {category: req.body.category}, function (err) {
-//         return res.redirect('/viewEntry/' + req.body.title);
-//       }
-//   }
+  var entry_title = req.params.id;
+  Entry.findOne({title: entry_title}).exec(function (err, response) {
+    var date = response.date;
+    Entry.findOneAndRemove({title: entry_title}).exec(function (err, responsivo) {
+      var newentry = new Entry({title: req.body.title, picture: req.body.picture, recipe: req.body.recipe,
+                              category: req.body.category, notes: req.body.notes, date: date});
+      newentry.save(function (err) {
+        return res.redirect('/')
+      });
+    });
+  });
 };
 
 

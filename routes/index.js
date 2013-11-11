@@ -34,7 +34,7 @@ var pictures = {
 
 // MAIN PAGE: PASS IN ALL ENTRIES
 exports.index = function(req, res){
-  var allEntries = Entry.find({}).exec(function (err, data) {
+  var allEntries = Entry.find({}).sort('datecreated').exec(function (err, data) {
     if (err) {
       res.send("Could not find all entries");
     } else if (data.length == 0) {
