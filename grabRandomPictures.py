@@ -31,4 +31,4 @@ def getPictureURL(searchTerm):
 if __name__ == "__main__":
 	#animal = raw_input("Enter a cute animal:\n")
 	with open("animalURLs.txt",'wb') as f:
-		f.write(",".join(getPictureURL("cutekitty")))
+		f.write('"' +  '","'.join(getPictureURL("cutekitty")) + '"')

@@ -3,15 +3,17 @@ $(document).ready(function(){
 });
 
 function populateEditEntry(){
-	var cats = $('#catdisplay').text();
+	var cats = $('#catsdisplay').text();
 	var res = cats.split(",");
-	for (String cat: res) {
-		console.log(cat);
-		$('select[name="options"]').find('option:contains('+cat+')').attr("selected",true);	
+	for (var i = 0; i < res.length; i++) {
+		var option = $("option[value='"+res[i]+"']");
+		console.log(option.val());
+		$("option[value='"+res[i]+"']").attr('selected','selected');
 	}
+	$('#multiselect').selectmenu("refresh",true);
 }
 
 function editEntryCats(){
 	var categories = $("option:selected").map(function(){ return this.value }).get().join(", ");
-	$("#catdisplay").text(categories);
+	$("#catsdisplay").text(categories);
 }

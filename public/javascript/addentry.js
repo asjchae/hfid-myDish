@@ -1,6 +1,5 @@
 // Javascript for creating a new entry
 $(window).ready(function(){
-	$('#multiselect').multiselect();
 	$('#other').click(function() {
 		//Add a new category
 		var value = $("#other").val();
