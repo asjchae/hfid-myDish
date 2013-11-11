@@ -59,7 +59,7 @@ exports.addEntry_post = function(req, res) {
 
     var d = year + "/" + month + "/" + number;
 
-    var newentry = new Entry({title: req.body.title, picture: pictures.urls[Math.floor(Math.random()*pictures.urls.length)], recipe: req.body.recipe,
+    var newentry = new Entry({title: req.body.title, picture:req.body.picture, recipe: req.body.recipe,
                               category: req.body.category, notes: req.body.notes, date: d});
     newentry.save(function (err) {  
       if (err) {

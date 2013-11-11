@@ -67,7 +67,10 @@ exports.catselects = function (req, res) {
 };
 
 exports.camera = function (req, res) {
-  res.render('camera');
+  console.log("I AM RUN");
+  console.log(req.body);
+  console.log("I AM RUN");
+  res.render('camera', {picture: req.body});
 };
 
 
