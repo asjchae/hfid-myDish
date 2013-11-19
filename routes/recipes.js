@@ -48,8 +48,6 @@ exports.addEntry_post = function(req, res) {
   var date = new Date();
   var newentry = new Entry({title: req.body.title, picture: req.body.picture, recipe: req.body.recipe,
                               category: req.body.category, notes: req.body.notes, datecreated: date});
-
-
   newentry.save(function (err) {  
     if (err) {
       console.log("Problem saving entry.");

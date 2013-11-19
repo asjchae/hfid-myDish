@@ -16,9 +16,10 @@ block content
           form(action='/', method='post', id='newentry')
             input(id="title", type='text', name='title', placeholder='Title')
             div.meal-pic
-              img(id="picture", name='picture', src="/images/mydish_icon.png")
+              img(id="cameraPicture", src="/images/mydish_icon.png")
+              input(id="picture", type='hidden', name='picture')
             div.add-meal-button
-              a(id="gotocamera", type="button", href='', data-theme='a', onclick="takePicture();") Take Photo
+              button(id="gotocamera", type="button", data-theme='a', onclick="takePicture();") Take Photo
             textarea(id="recipe", name='recipe', placeholder='Recipe', style='height:100px')
             select(id="multiselect", name='category', data-theme='a', multiple="multiple")
                 option(data-placeholder="true") Choose a category...
