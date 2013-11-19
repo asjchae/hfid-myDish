@@ -22,7 +22,7 @@ block content
             each entry, i in entries
               h2 #{entry.title}
               div.meal-pic
-                a(target="_self", href='/viewEntry/#{entry.title}')
+                a(target="_self", href='/viewEntry/#{entry._id}')
                   img(src="#{entry.picture}")
 
   script(src='/javascript/layout.js', type = 'text/javascript')

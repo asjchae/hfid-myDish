@@ -25,7 +25,7 @@ block content
                   div.social-icon
                     img(src='/images/social_icons/twitter.png')
         div(class="body-container")
-          form(action='/viewEntry/#{entry.title}', method='post', id='newentry')
+          form(action='/viewEntry/#{entry._id}', method='post', id='newentry')
             textarea(id="title", type='text', name='title') #{entry.title}
             div.meal-pic
               img(id="picture2", name='picture', src="#{entry.picture}")
