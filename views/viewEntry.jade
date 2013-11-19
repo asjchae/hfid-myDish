@@ -25,7 +25,7 @@ block content
                   div.social-icon
                     img(src='/images/social_icons/twitter.png')
         div(class="body-container")
-          form(action='/', method='post', id='newentry')
+          form(action='/viewEntry/#{entry._id}', method='post', id='newentry')
             textarea(id="title", type='text', name='title') #{entry.title}
             div.meal-pic
               img(id="picture2", name='picture', src="#{entry.picture}")
@@ -43,7 +43,7 @@ block content
             div.submit-buttons
               div.cancel-button
                 a(data-rel="back")
-                  button(id="cancel", data-icon="back", data-theme="c") Back
+                  button(id="cancel", data-theme="r", data-icon="delete") Cancel
               div.save-button
                 button(id="save",data-theme='b', type='submit', data-icon="check") Save
 

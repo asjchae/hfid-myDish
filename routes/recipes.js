@@ -29,7 +29,7 @@ exports.db_delete = function (req, res) {
 function entry_compile(data, res, callback) {
   var all_entries = [];
   for (var i=0; i<data.length; i++) {
-    var temp_entry = Entry.findOne({title: data[i].title}).exec(function (err, response) {
+    var temp_entry = Entry.findOne({_id: data[i]._id}).exec(function (err, response) {
       all_entries.push(response);
       if (all_entries.length == data.length) {
         callback(res, all_entries);
@@ -63,9 +63,17 @@ exports.addEntry_post = function(req, res) {
 
 
 exports.viewEntry = function (req, res) {
+<<<<<<< HEAD
   var entry_id = req.params.id;
   console.log("DEBUG1"); 
   console.log(req.params);
+=======
+  console.log(req.params);
+  console.log(req);
+  var entry_id = req.params.id;
+  console.log("DEBUG1"); 
+  console.log(req.params.id);
+>>>>>>> 98e5eefeb2faf325aad24f71234021cb82eefbf5
   Entry.findOne({_id:entry_id}).exec(function (err, response) {
     if (err) {
       console.log('Could not locate entry.');
@@ -80,12 +88,16 @@ exports.viewEntry = function (req, res) {
 
 
 exports.editEntrypost = function (req, res) {//picture is not in req
-  var entry_title = req.params.id;
+  var entry_id = req.params.id;
   console.log("editEntryPost");
+<<<<<<< HEAD
   console.log("AHHH " + entry_title);
   Entry.findOne({title: entry_title}).exec(function (err, response) {
+=======
+  Entry.findOne({_id: entry_id}).exec(function (err, response) { // But what if there is no title
+>>>>>>> 98e5eefeb2faf325aad24f71234021cb82eefbf5
     var date = response.date;
-    Entry.findOneAndRemove({title: entry_title}).exec(function (err, responsivo) {
+    Entry.findOneAndRemove({_id: entry_id}).exec(function (err, responsivo) {
       var newentry = new Entry({title: req.body.title, picture: req.body.picture, recipe: req.body.recipe,
                               category: req.body.category, notes: req.body.notes, date: date});
       console.log(newentry);
