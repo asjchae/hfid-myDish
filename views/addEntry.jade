@@ -14,18 +14,25 @@ block content
             h1 myDish
         div(class="body-container")
           form(action='/', method='post', id='newentry')
-            input(id="title", type='text', name='title', placeholder='Title')
+            div.entry-title
+              div.entry-title-label
+                h2 Title:
+              div.entry-title-entry
+                input(id="title", type='text', name='title')
             div.meal-pic
               img(id="picture", name='picture', src="/images/mydish_icon.png")
             div.add-meal-button
               a(type="button", href='#/camera', data-theme='a') Take Photo
-            textarea(id="recipe", name='recipe', placeholder='Recipe', style='height:100px')
-            select(id="multiselect", name='category', data-theme='a', multiple="multiple")
-                option(data-placeholder="true") Choose a category...
-                option(value='Entree') Entree
-                option(value='Appetizers') Appetizer
-                option(value='Dessert') Dessert
-            textarea(id = "notes", name='notes', placeholder='Notes', style='height:100px')
+            h2 Recipe:
+            textarea(id="recipe", name='recipe', style='height:100px')
+            div.category-select
+              select(id="multiselect", name='category', data-theme='a', multiple="multiple")
+                  option(data-placeholder="true") Choose a category...
+                  option(value='Entree') Entree
+                  option(value='Appetizers') Appetizer
+                  option(value='Dessert') Dessert
+            h2 Notes:
+            textarea(id = "notes", name='notes', style='height:100px')
             div.submit-buttons
               div.cancel-button
                 a(data-rel="back")

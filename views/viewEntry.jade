@@ -26,19 +26,26 @@ block content
                     img(src='/images/social_icons/twitter.png')
         div(class="body-container")
           form(action='/viewEntry/#{entry._id}', method='post', id='newentry')
-            textarea(id="title", type='text', name='title') #{entry.title}
+            div.entry-title
+              div.entry-title-label
+                h2 Title:
+              div.entry-title-entry
+                textarea(id="title", type='text', name='title') #{entry.title}
             div.meal-pic
               img(id="picture2", name='picture', src="#{entry.picture}")
               textarea(id="picture", name="picture", style="display:none", placeholder="#{entry.picture}") #{entry.picture}
             div.add-meal-button
               button(data-theme='a') Retake Photo
+            h2 Recipe:
             textarea(id="recipe", name='recipe', style='height:100px') #{entry.recipe}
-            div(id="catsdisplay" style = "display:none") #{entry.category}
-            select(id="multiselect", name='category', data-theme='a', multiple="multiple", onchange="editEntryCats();", click="populateEditEntry();")
-                option(data-placeholder="true") Choose a category...
-                option(value='Entree') Entree
-                option(value='Appetizers') Appetizer
-                option(value='Dessert') Dessert
+            div.category-select
+              div(id="catsdisplay" style = "display:none") #{entry.category}
+              select(id="multiselect", name='category', data-theme='a', multiple="multiple", onchange="editEntryCats();", click="populateEditEntry();")
+                  option(data-placeholder="true") Choose a category...
+                  option(value='Entree') Entree
+                  option(value='Appetizers') Appetizer
+                  option(value='Dessert') Dessert
+            h2 Notes:
             textarea(id = "notes", name='notes', style='height:100px') #{entry.notes}
             div.submit-buttons
               div.cancel-button
