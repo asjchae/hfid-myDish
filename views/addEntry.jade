@@ -12,20 +12,31 @@ block content
               img(src='/images/mydish_icon.png')
           div(data-role='title', class="title")
             h1 myDish
+          a(href='#popupShare', data-rel='popup', data-role='button', data-theme="e", class="ui-btn-right add-button", data-icon="star", data-position-to="window", data-transition="pop", style="margin-top:10px;") Share
+              #popupShare(data-role='popup', data-overlay-theme="a", class="ui-content")
+                h3 Share this dish:
+                div.social-icons-container
+                  div.social-icon
+                    img(src='/images/social_icons/email.png')
+                  div.social-icon
+                    img(src='/images/social_icons/facebook.png')
+                  div.social-icon-instagram
+                    img(src='/images/social_icons/instagram.png')
+                  div.social-icon
+                    img(src='/images/social_icons/twitter.png')
         div(class="body-container")
           form(action='/', method='post', id='newentry')
             input(id="title", type='text', name='title', placeholder='Title')
             div.meal-pic
               img(id="picture", name='picture', src="/images/mydish_icon.png")
             div.add-meal-button
-              a(type="button", href='#/camera', data-theme='a') Retake Photo
+              a(type="button", href='#/camera', data-theme='a') Take Photo
             textarea(id="recipe", name='recipe', placeholder='Recipe', style='height:100px')
             select(id="multiselect", name='category', data-theme='a', multiple="multiple")
+                option(data-placeholder="true") Choose a category...
                 option(value='Entree') Entree
-                option(value='Appetizers') Appetizers
+                option(value='Appetizers') Appetizer
                 option(value='Dessert') Dessert
-                option(value='Bread') Bread
-                option(id="other", value='new') Other...
             textarea(id = "notes", name='notes', placeholder='Notes', style='height:100px')
             div.submit-buttons
               div.cancel-button

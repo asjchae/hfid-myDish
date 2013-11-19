@@ -1,7 +1,7 @@
 """
 Grabs cute random picture urls based on search query
 """
-import simplejson, time, urllib2
+import simplejson, time, urllib2b
 
 def getPictureURL(searchTerm):
 	urls = []
@@ -31,4 +31,4 @@ def getPictureURL(searchTerm):
 if __name__ == "__main__":
 	#animal = raw_input("Enter a cute animal:\n")
 	with open("animalURLs.txt",'wb') as f:
-		f.write('"' +  '","'.join(getPictureURL("cutekitty")) + '"')
+		f.write('"' +  '","'.join(getPictureURL("meal")) + '"')

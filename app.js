@@ -4,7 +4,6 @@
  */
 
 // Note for Ari if mongodb fails: sudo mongod --dbpath /var/lib/mongodb --smallfiles
-
 var express = require('express');
 var routes = require('./routes');
 var user = require('./routes/user');
