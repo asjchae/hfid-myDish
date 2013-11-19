@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 
-var entry_schema = mongoose.Schema({
+var Schema = mongoose.Schema, ObjectId = Schema.ObjectId;
+var entry_schema = new Schema({
     title: String,
     picture: String,
     recipe: String,

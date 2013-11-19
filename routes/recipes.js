@@ -44,9 +44,9 @@ exports.addEntry = function (req, res) {
 };
 
 exports.addEntry_post = function(req, res) {
-
+  console.log(req.body.picture);
   var date = new Date();
-  var newentry = new Entry({title: req.body.title, picture: pictures.urls[Math.floor(Math.random()*pictures.urls.length)], recipe: req.body.recipe,
+  var newentry = new Entry({title: req.body.title, picture: req.body.picture, recipe: req.body.recipe,
                               category: req.body.category, notes: req.body.notes, datecreated: date});
 
 
@@ -63,10 +63,10 @@ exports.addEntry_post = function(req, res) {
 
 
 exports.viewEntry = function (req, res) {
-  var entry_title = req.params.id;
+  var entry_id = req.params.id;
   console.log("DEBUG1"); 
-  console.log(req.params.id);
-  Entry.findOne({title:entry_title}).exec(function (err, response) {
+  console.log(req.params);
+  Entry.findOne({_id:entry_id}).exec(function (err, response) {
     if (err) {
       console.log('Could not locate entry.');
     } else {
@@ -82,7 +82,7 @@ exports.viewEntry = function (req, res) {
 exports.editEntrypost = function (req, res) {//picture is not in req
   var entry_title = req.params.id;
   console.log("editEntryPost");
-  console.log(req.body);
+  console.log("AHHH " + entry_title);
   Entry.findOne({title: entry_title}).exec(function (err, response) {
     var date = response.date;
     Entry.findOneAndRemove({title: entry_title}).exec(function (err, responsivo) {
