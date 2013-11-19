@@ -63,17 +63,7 @@ exports.addEntry_post = function(req, res) {
 
 
 exports.viewEntry = function (req, res) {
-<<<<<<< HEAD
   var entry_id = req.params.id;
-  console.log("DEBUG1"); 
-  console.log(req.params);
-=======
-  console.log(req.params);
-  console.log(req);
-  var entry_id = req.params.id;
-  console.log("DEBUG1"); 
-  console.log(req.params.id);
->>>>>>> 98e5eefeb2faf325aad24f71234021cb82eefbf5
   Entry.findOne({_id:entry_id}).exec(function (err, response) {
     if (err) {
       console.log('Could not locate entry.');
@@ -90,12 +80,7 @@ exports.viewEntry = function (req, res) {
 exports.editEntrypost = function (req, res) {//picture is not in req
   var entry_id = req.params.id;
   console.log("editEntryPost");
-<<<<<<< HEAD
-  console.log("AHHH " + entry_title);
-  Entry.findOne({title: entry_title}).exec(function (err, response) {
-=======
   Entry.findOne({_id: entry_id}).exec(function (err, response) { // But what if there is no title
->>>>>>> 98e5eefeb2faf325aad24f71234021cb82eefbf5
     var date = response.date;
     Entry.findOneAndRemove({_id: entry_id}).exec(function (err, responsivo) {
       var newentry = new Entry({title: req.body.title, picture: req.body.picture, recipe: req.body.recipe,

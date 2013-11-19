@@ -1,6 +1,8 @@
 $(document).ready(function(){
 	resizePage();
 	$('body').css('background-color','#d9d9d9');
+	var hi = $('.meal-entry').html();
+	console.log(hi);
 });
 
 function resizePage(){
