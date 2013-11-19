@@ -44,9 +44,9 @@ exports.addEntry = function (req, res) {
 };
 
 exports.addEntry_post = function(req, res) {
-
+  console.log(req.body.picture);
   var date = new Date();
-  var newentry = new Entry({title: req.body.title, picture: pictures.urls[Math.floor(Math.random()*pictures.urls.length)], recipe: req.body.recipe,
+  var newentry = new Entry({title: req.body.title, picture: req.body.picture, recipe: req.body.recipe,
                               category: req.body.category, notes: req.body.notes, datecreated: date});
 
 
@@ -63,11 +63,7 @@ exports.addEntry_post = function(req, res) {
 
 
 exports.viewEntry = function (req, res) {
-  console.log(req.params);
-  console.log(req);
   var entry_id = req.params.id;
-  console.log("DEBUG1"); 
-  console.log(req.params.id);
   Entry.findOne({_id:entry_id}).exec(function (err, response) {
     if (err) {
       console.log('Could not locate entry.');

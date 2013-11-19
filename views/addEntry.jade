@@ -22,7 +22,7 @@ block content
             div.meal-pic
               img(id="picture", name='picture', src="/images/mydish_icon.png")
             div.add-meal-button
-              a(type="button", href='#/camera', data-theme='a') Take Photo
+              a(id="gotocamera", type="button", href='', data-theme='a', onclick="takePicture();") Take Photo
             h2 Recipe:
             textarea(id="recipe", name='recipe', style='height:100px')
             div.category-select
@@ -39,7 +39,6 @@ block content
                   button(id="cancel", data-theme="r", data-icon="delete") Cancel
               div.save-button
                 button(id="save",data-theme='b', type='submit', data-icon="check") Save
-
-  script(src='/javascript/addentry.js', type = 'text/javascript')
+  script(src='/javascript/addentry.js', type = 'text/javascript')  
 
     
