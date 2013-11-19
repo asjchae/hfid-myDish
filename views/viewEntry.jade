@@ -23,6 +23,7 @@ block content
             textarea(id="recipe", name='recipe', style='height:100px') #{entry.recipe}
             div(id="catsdisplay" style = "display:none") #{entry.category}
             select(id="multiselect", name='category', data-theme='a', multiple="multiple", onchange="editEntryCats();", click="populateEditEntry();")
+                option(data-placeholder="true") Choose a category...
                 option(value='Entree') Entree
                 option(value='Appetizers') Appetizers
                 option(value='Dessert') Dessert

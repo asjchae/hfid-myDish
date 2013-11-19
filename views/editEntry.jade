@@ -42,6 +42,7 @@ block content
               div.info-edit
                 //button(data-theme='a', data-mini='true') Edit
                 select(id="multiselect", name='category', data-theme='a', multiple="multiple", data-mini='true', onchange="editEntryCats();")
+                  option(data-placeholder="true") Choose a category...
                   option(value='Entrees') Entree
                   option(value='Appetizers') Appetizers
                   option(value='Dessert') Dessert
