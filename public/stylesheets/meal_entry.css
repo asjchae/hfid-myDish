@@ -9,13 +9,35 @@
   width: 40%;
 }
 
+.category-select {
+  margin: 25px 0;
+}
+
+.entry-title {
+  height: 55px;
+  margin: 10px 5px 0;
+  position: relative;
+  width: 100%;
+}
+
+.entry-title-entry {
+  float: left;
+  height: auto;
+  width: 85%;
+}
+.entry-title-label {
+  float: left;
+  height: auto;
+  width: 13%;
+}
+
 .meal-entry {
   padding: 0 5px;
 }
 
 .meal-pic {
   background-color: black;
-  margin: 0 auto;
+  margin: 15px auto;
   width: 80%;
 }
 

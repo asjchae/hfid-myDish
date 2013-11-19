@@ -14,19 +14,26 @@ block content
             h1 myDish
         div(class="body-container")
           form(action='/', method='post', id='newentry')
-            input(id="title", type='text', name='title', placeholder='Title')
+            div.entry-title
+              div.entry-title-label
+                h2 Title:
+              div.entry-title-entry
+                input(id="title", type='text', name='title')
             div.meal-pic
               img(id="cameraPicture", src="/images/mydish_icon.png")
               input(id="picture", type='hidden', name='picture')
             div.add-meal-button
-              button(id="gotocamera", type="button", data-theme='a', onclick="takePicture();") Take Photo
-            textarea(id="recipe", name='recipe', placeholder='Recipe', style='height:100px')
-            select(id="multiselect", name='category', data-theme='a', multiple="multiple")
-                option(data-placeholder="true") Choose a category...
-                option(value='Entree') Entree
-                option(value='Appetizers') Appetizer
-                option(value='Dessert') Dessert
-            textarea(id = "notes", name='notes', placeholder='Notes', style='height:100px')
+              a(id="gotocamera", type="button", href='', data-theme='a', onclick="takePicture();") Take Photo
+            h2 Recipe:
+            textarea(id="recipe", name='recipe', style='height:100px')
+            div.category-select
+              select(id="multiselect", name='category', data-theme='a', multiple="multiple")
+                  option(data-placeholder="true") Choose a category...
+                  option(value='Entree') Entree
+                  option(value='Appetizers') Appetizer
+                  option(value='Dessert') Dessert
+            h2 Notes:
+            textarea(id = "notes", name='notes', style='height:100px')
             div.submit-buttons
               div.cancel-button
                 a(data-rel="back")
