@@ -49,8 +49,16 @@ block content
             textarea(id = "notes", name='notes', style='height:100px') #{entry.notes}
             div.submit-buttons
               div.cancel-button
-                a(data-rel="back")
-                  button(id="cancel", data-theme="r", data-icon="delete") Cancel
+                a(href='#popupCancel', data-rel='popup', data-role='button', data-theme="r", data-icon="delete", data-position-to="window", data-transition="pop") Cancel
+                  #popupCancel(data-role='popup', data-overlay-theme="a")
+                    div.cancel-popup
+                      div.cancel-popup-text
+                        p Are you sure you want to cancel?
+                      div.cancel-popup-options
+                        div.cancel-popup-yes
+                          button(id="cancel-yes",data-theme='b') Yes
+                        div.cancel-popup-no
+                          button(id="cancel-no",data-theme='r') No
               div.save-button
                 button(id="save",data-theme='b', type='submit', data-icon="check") Save
 

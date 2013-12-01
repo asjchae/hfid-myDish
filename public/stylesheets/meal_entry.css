@@ -9,6 +9,30 @@
   width: 40%;
 }
 
+.cancel-popup {
+  height: 90px;
+  position: relative;
+  width: 250px;
+}
+
+.cancel-popup-no {
+  float: left;
+  padding: 0 2%;
+  width: 46%;
+}
+
+.cancel-popup-text {
+  height: auto;
+  text-align: center;
+  width: 100%;
+}
+
+.cancel-popup-yes {
+  float: right;
+  padding: 0 2%;
+  width: 46%;
+}
+
 .category-select {
   margin: 25px 0;
 }
