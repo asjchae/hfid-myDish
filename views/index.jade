@@ -12,12 +12,6 @@ block content
             h1 myDish
           a(target="_self", href='#/addEntry', data-icon='add', data-theme="b", class="ui-btn-right add-button", style="margin-top:10px;") Dish
         div(class="body-container")
-          select(id="multiselect", name='category', data-theme='a', multiple="multiple", onchange="changeFunc();")
-                option(value='Entree') Entree
-                option(value='Appetizers') Appetizers
-                option(value='Dessert') Dessert
-                option(value='Bread') Bread
-                option(id="Other", value='new') Other...
           div.meal-entry
             each entry, i in entries
               h2 #{entry.title}

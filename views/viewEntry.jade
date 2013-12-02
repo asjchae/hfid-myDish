@@ -33,9 +33,9 @@ block content
                 textarea(id="title", type='text', name='title') #{entry.title}
             div.meal-pic
               img(id="picture2", name='picture', src="#{entry.picture}")
-              textarea(id="picture", name="picture", style="display:none", placeholder="#{entry.picture}") #{entry.picture}
+              input(id="picture", type='hidden', name='picture')
             div.add-meal-button
-              button(data-theme='a') Retake Photo
+              a(id="gotocamera", type="button", href='', data-theme='a', onclick="takePicture();") Retake Photo
             h2 Recipe:
             textarea(id="recipe", name='recipe', style='height:100px') #{entry.recipe}
             div.category-select
