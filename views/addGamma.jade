@@ -1,0 +1,52 @@
+extends layout
+
+block content
+  script(src='/javascript/addentry.js', type = 'text/javascript')  
+  body
+    div(data-role='page', data-theme='b', class="page sarah-page")
+      div(class="container")
+        div(data-role='header', class = "header")
+          a(class="back"  data-rel="back" data-role="none")
+            div(class="back-arrow")
+              img(src='/images/Back_arrow.png')
+            div(data-role='icon', class="icon")
+              img(src='/images/mydish_icon.png')
+          div(data-role='title', class="title")
+            h1 myDish
+        div(class="body-container")
+          form(action='/gamma', method='post', id='newentry')
+            div.entry-title
+              div.entry-title-label
+                h2 Title:
+              div.entry-title-entry
+                input(id="title", type='text', name='title')
+            div.meal-pic
+              img(id="cameraPicture", src="/images/mydish_icon.png")
+              input(id="picture", type='hidden', name='picture')
+            div.add-meal-button
+              a(id="gotocamera", type="button", href='', data-theme='a', onclick="takePicture();") Take Photo
+            h2 Recipe:
+            textarea(id="recipe", name='recipe', style='height:100px')
+            div.category-select
+              select(id="multiselect", name='category', data-theme='a', multiple="multiple")
+                  option(data-placeholder="true") Choose a category...
+                  option(value='Entree') Entree
+                  option(value='Appetizers') Appetizer
+                  option(value='Dessert') Dessert
+            div.submit-buttons
+              div.cancel-button
+                a(href='#popupCancel', data-rel='popup', data-role='button', data-theme="r", data-icon="delete", data-position-to="window", data-transition="pop") Cancel
+                  #popupCancel(data-role='popup', data-overlay-theme="a")
+                    div.cancel-popup
+                      div.cancel-popup-text
+                        p Are you sure you want to cancel?
+                      div.cancel-popup-options
+                        div.cancel-popup-yes
+                          button(id="cancel-yes",data-theme='b') Yes
+                        div.cancel-popup-no
+                          button(id="cancel-no",data-theme='r') No
+              div.save-button
+                button(id="save",data-theme='b', type='submit', data-icon="check") Save
+  
+
+    

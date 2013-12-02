@@ -11,6 +11,7 @@ var http = require('http');
 var path = require('path');
 var mongoose = require('mongoose');
 var recipes = require('./routes/recipes');
+var usability = require('./routes/usability');
 
 var app = express();
 mongoose.connect(process.env.MONGOLAB_URI || 'localhost/myDish');
@@ -48,6 +49,18 @@ app.get('/db_delete', recipes.db_delete);
 
 app.post('/', recipes.addEntry_post);
 app.post('/selectedcategories', index.catselects);
+
+app.get('/alpha', usability.alpha);
+app.get('/beta', usability.beta);
+app.get('/gamma', usability.gamma);
+
+app.post('/alpha', usability.addAlpha_post);
+app.post('/beta', usability.addBeta_post);
+app.post('/gamma', usability.addGamma_post);
+
+app.get('/addEntry_alpha', usability.addAlpha);
+app.get('/addEntry_beta', usability.addBeta);
+app.get('/addEntry_gamma', usability.addGamma);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
