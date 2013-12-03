@@ -33,7 +33,7 @@ block content
                 textarea(id="title", type='text', name='title') #{entry.title}
             div.meal-pic
               img(id="picture2", name='picture', src="#{entry.picture}")
-              input(id="picture", type='hidden', name='picture')
+              textarea(id="picture", style="display:none;",type='hidden', name='picture') #{entry.picture}
             div.add-meal-button
               a(id="gotocamera", type="button", href='', data-theme='a', onclick="takePicture();") Retake Photo
             h2 Recipe:
