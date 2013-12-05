@@ -77,7 +77,7 @@ exports.viewEntry = function (req, res) {
 exports.editEntrypost = function (req, res) {//picture is not in req
   var entry_id = req.params.id;
   console.log("editEntryPost");
-  var date = (new Date()).getTime();
+  var date = new Date();
   Entry.update({_id: entry_id}, {title: req.body.title, picture: req.body.picture, recipe: req.body.recipe,
                               category: req.body.category, notes: req.body.notes, datecreated: date}, {multi:false}, function(err){
   });
@@ -86,8 +86,8 @@ exports.editEntrypost = function (req, res) {//picture is not in req
   var allEntries = Entry.find({}).sort('datecreated').exec(function (err, data) {
     res.render('index', {entries: allEntries});
   });
-
 };
+
 /*  Entry.findOne({_id: entry_id}).exec(function (err, response) { // But what if there is no title
     var date = response.date;
     Entry.findOneAndRemove({_id: entry_id}).exec(function (err, responsivo) {
