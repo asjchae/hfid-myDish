@@ -83,9 +83,6 @@ exports.editEntrypost = function (req, res) {//picture is not in req
   });
   console.log("Here");
   res.redirect("/");
-  var allEntries = Entry.find({}).sort('datecreated').exec(function (err, data) {
-    res.render('index', {entries: allEntries});
-  });
 };
 
 /*  Entry.findOne({_id: entry_id}).exec(function (err, response) { // But what if there is no title
