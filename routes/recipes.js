@@ -66,7 +66,6 @@ exports.viewEntry = function (req, res) {
     if (err) {
       console.log('Could not locate entry.');
     } else {
-      console.log("HIERHEREIHEIRHEIH")
       console.log(response);
       res.render('viewEntry', {entry: response});
     }
@@ -78,21 +77,34 @@ exports.viewEntry = function (req, res) {
 exports.editEntrypost = function (req, res) {//picture is not in req
   var entry_id = req.params.id;
   console.log("editEntryPost");
-  Entry.findOne({_id: entry_id}).exec(function (err, response) { // But what if there is no title
+  var date = (new Date()).getTime();
+  Entry.update({_id: entry_id}, {title: req.body.title, picture: req.body.picture, recipe: req.body.recipe,
+                              category: req.body.category, notes: req.body.notes, datecreated: date}, {multi:false}, function(err){
+  });
+  console.log("Here");
+  res.redirect("/");
+  var allEntries = Entry.find({}).sort('datecreated').exec(function (err, data) {
+    res.render('index', {entries: allEntries});
+  });
+
+};
+/*  Entry.findOne({_id: entry_id}).exec(function (err, response) { // But what if there is no title
     var date = response.date;
     Entry.findOneAndRemove({_id: entry_id}).exec(function (err, responsivo) {
       var newentry = new Entry({title: req.body.title, picture: req.body.picture, recipe: req.body.recipe,
                               category: req.body.category, notes: req.body.notes, date: date});
       console.log(newentry);
       newentry.save(function (err) {
-        if (err)
-        return res.redirect('/viewEntry', {entry: response});
+        if (err){ //It goes to error everytime it edits (save)  <--- ARI ARI ARI ARI ARI
+          console.log("here");
+          return res.redirect('/viewEntry', {entry: response});
+        }
         else
           return res.redirect('/')
       });
     });
-  });
-};
+  });*/
+
 
 
 // DELETE

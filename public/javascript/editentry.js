@@ -24,3 +24,7 @@ function takePicture(){
         $('#picture2').attr("src",url[number]);
         $('#picture').val(url[number]);
 }
+
+function redirect(){
+        window.location.replace("/");
+}
