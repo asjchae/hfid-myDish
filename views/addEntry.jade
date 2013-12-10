@@ -1,7 +1,6 @@
 extends layout
 
 block content
-  script(src='/javascript/addentry.js', type = 'text/javascript')  
   body
     div(data-role='page', data-theme='b', class="page sarah-page")
       div(class="container")
@@ -47,9 +46,9 @@ block content
                         div.cancel-popup-yes
                           button(id="cancel-yes",data-theme='b') Yes
                         div.cancel-popup-no
-                          button(id="cancel-no", href="#", data-theme='r', data-rel="back") No
+                          button(id="cancel-no",data-theme='r', data-rel="back") No
               div.save-button
                 button(id="save",data-theme='b', type='submit', data-icon="check") Save
-  
+  script(src='/javascript/addentry.js', type = 'text/javascript')    
 
     
