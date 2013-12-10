@@ -39,23 +39,43 @@ function entry_compile(data, res, callback) {
 };
 
 
+exports.entry_post = function(req, res) {
+  var entry_id = req.body.postid;
+  console.log(entry_id);
+  var date = new Date();
+  console.log(date);
+  if (entry_id == 'new') {
+    var newentry = new Entry({title: req.body.title, picture: req.body.picture, recipe: req.body.recipe,
+                                category: req.body.category, notes: req.body.notes, datecreated: date});
+    newentry.save(function (err) {  
+      if (err) {
+        console.log("Problem saving entry.");
+        return res.redirect('/addEntry');
+      } else {
+        return res.redirect('/');
+      }
+    });
+  } else {
+    Entry.update({_id: entry_id}, {title: req.body.title, picture: req.body.picture, recipe: req.body.recipe,
+                                category: req.body.category, notes: req.body.notes, datecreated: date}, {multi:false}, function(err){
+        if (err) {
+          console.log("Problem saving entry.");
+          return res.redirect('/viewEntry/' + entry_id);
+      } else {
+          return res.redirect('/');
+      }
+    }); 
+  } 
+};
+
 exports.addEntry = function (req, res) {
 	res.render('addEntry');
 };
 
 exports.addEntry_post = function(req, res) {
-  console.log(req.body.picture);
-  var date = new Date();
-  var newentry = new Entry({title: req.body.title, picture: req.body.picture, recipe: req.body.recipe,
-                              category: req.body.category, notes: req.body.notes, datecreated: date});
-  newentry.save(function (err) {  
-    if (err) {
-      console.log("Problem saving entry.");
-      return res.redirect('/addEntry');
-    } else {
-      return res.redirect('/');
-    }
-  });
+
+
+
 };
 
 

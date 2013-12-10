@@ -25,12 +25,13 @@ block content
                   div.social-icon
                     img(src='/images/social_icons/twitter.png')
         div(class="body-container")
-          form(action='/viewEntry/#{entry._id}', method='post', id='newentry')
+          form(action='/', method='post', id='newentry')
             div.entry-title
               div.entry-title-label
                 h2 Title:
               div.entry-title-entry
                 textarea(id="title", type='text', name='title') #{entry.title}
+                textarea(id="postid", type='text', name='postid', style="display:none") #{entry._id}
             div.meal-pic
               img(id="picture2", name='picture', src="#{entry.picture}")
               textarea(id="picture", style="display:none;",type='hidden', name='picture') #{entry.picture}

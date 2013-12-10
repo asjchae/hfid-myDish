@@ -39,7 +39,7 @@ app.get('/users', user.list);
 app.get('/camera', index.camera);
 
 app.get('/viewEntry/:id', recipes.viewEntry);
-app.post('/viewEntry/:id', recipes.editEntrypost);
+app.post('/', recipes.entry_post);
 
 app.get('/addEntry', recipes.addEntry);
 app.get('/deleteEntry/:id', index.deleteEntry);
@@ -47,7 +47,7 @@ app.get('/deleteEntry/:id', index.deleteEntry);
 app.get('/db_entries', recipes.db_entries);
 app.get('/db_delete', recipes.db_delete);
 
-app.post('/', recipes.addEntry_post);
+app.post('/', recipes.entry_post);
 app.post('/selectedcategories', index.catselects);
 
 app.get('/alpha', usability.alpha);
