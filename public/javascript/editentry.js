@@ -1,5 +1,11 @@
 $(document).ready(function(){
         populateEditEntry();
+        $('#cancel-yes').click(function(){
+                window.location.replace("/");
+        });
+        $('#cancel-no').click(function(){
+                $("#popupCancel").popup("close");
+        });
 });
 
 function populateEditEntry(){
@@ -25,6 +31,3 @@ function takePicture(){
         $('#picture').val(url[number]);
 }
 
-function redirect(){
-        window.location.replace("/");
-}
