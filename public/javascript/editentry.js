@@ -25,6 +25,3 @@ function takePicture(){
         $('#picture').val(url[number]);
 }
 
-function redirect(){
-        window.location.replace("/");
-}

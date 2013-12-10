@@ -5,3 +5,12 @@ function takePicture(){
 	$('#cameraPicture').attr("src",url[number]);
 	$('#picture').val(url[number]);
 }
+
+$(document).ready(function(){
+        $('#cancel-yes').click(function(){
+        	window.location.replace("/");
+        });
+        $('#cancel-no').click(function(){
+        	$("#popupCancel").popup("close");
+        });
+});
