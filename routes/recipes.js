@@ -84,6 +84,7 @@ exports.editEntrypost = function (req, res) {//picture is not in req
   console.log("Here");
   res.redirect("/");
 };
+
 /*  Entry.findOne({_id: entry_id}).exec(function (err, response) { // But what if there is no title
     var date = response.date;
     Entry.findOneAndRemove({_id: entry_id}).exec(function (err, responsivo) {
